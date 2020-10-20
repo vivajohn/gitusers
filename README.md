@@ -1,6 +1,8 @@
 # Gitusers
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
+This is a demo program for searching for users in GitHub and displaying a details page. It is a Progressive Web App which has been configured to cache requests to the GitHub API.
+
+The project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
 
 ## Development server
 

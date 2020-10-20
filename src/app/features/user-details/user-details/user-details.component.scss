@@ -1,0 +1,89 @@
+@import '../../../common.scss';
+
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+  padding: 0 $hSpace;
+  margin-top: $vSpace;
+  overflow-y: auto;
+  overflow-x: auto;
+  box-sizing: border-box;
+
+  &-image {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: $vSpace;
+
+    img {
+      max-width: 50%;
+    }
+
+    &-chart {
+      box-sizing: border-box;
+      padding: $vSpace 0;
+    }
+  }
+}
+
+@media (min-aspect-ratio: 4/3) {
+  .details {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow-y: hidden;
+    overflow-x: auto;
+    box-sizing: border-box;
+  
+    &-image {
+      width: fit-content;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: $vSpace $hSpace;
+  
+      img {
+        min-width: 250px;
+      }
+    }
+
+    &-chart {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;  
+      flex-grow: 1;
+      height: 100%;
+      // border: solid 2px yellow;
+
+      gu-activity-chart {
+        height: 100%;
+        width: 95%;
+        box-sizing: border-box;
+      }
+    }
+  }
+
+}
+
+// Styling for wide, narrow sceens (phones in landscape mode)
+@media (max-height: $mediaHeight) {
+  gu-navbar {
+    height: 100%;
+  }
+    
+  .details {
+    &-image {
+      img {
+        height: 225px;
+        width: 225px;
+      }
+    }
+  }
+}
+

@@ -1,0 +1,12 @@
+<gu-page>
+  <gu-navbar>
+    <div navmiddle>
+      Git&nbsp;Users
+    </div>
+  </gu-navbar>
+
+  <div class="search-panel">
+    <gu-search-box (output)="searchBouncer.next($event)" [text]="model.searchText"></gu-search-box>
+    <gu-users-list [users]="model.users$ | async"></gu-users-list>
+  </div>
+</gu-page>

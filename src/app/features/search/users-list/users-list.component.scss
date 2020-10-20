@@ -1,0 +1,118 @@
+@import '../../../common.scss';
+
+$portraitImageSize: 56px;
+
+mat-card {
+  margin: 0 0 $hSpace 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.userlist {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.user {
+  @extend .row;
+  justify-content: space-between;
+  position: relative;
+  margin-right: $hSpace;
+}
+
+.user-img {
+  height: $portraitImageSize;
+  width: $portraitImageSize;
+  background-size: contain;
+  margin-right: $hSpace;
+}
+
+.user-info {
+  @extend .row;
+}
+
+.user-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+
+.landscape {
+  display: none;
+  height: 0;
+}
+
+// Styling for wide, narrow sceens (phones in landscape mode)
+@media (max-height: $mediaHeight) { 
+  portrait {
+    display: none;
+    height: 0;
+  }
+
+  mat-card {
+    width: 200px;
+    height: 200px;
+    margin: 0 0 0 $hSpace;
+    padding: 0;
+  }
+
+  .userlist {
+    flex-direction: row;
+    align-items: center;
+    overflow-y: hidden;
+    overflow-x: auto;
+    height: 100%;
+  }
+
+  .user {
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+  }
+
+  .user-info {
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .user-img {
+    top: 0;
+    left: 0;
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    background-size: 200px, 200px, contain;
+    margin-right: $hSpace;
+    box-sizing: border-box;
+  }
+
+  .text-box {
+    display: flex;
+    backdrop-filter: blur(6px);
+    color: yellow;
+    width: 100%;
+  }
+
+  .user-text {
+    align-self: flex-start;
+    padding: $vSpace/2 $hSpace/2;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.15);
+    height: 100%;
+    width: 100%;
+    padding: $vSpace/2 $hSpace/2;
+    box-sizing: border-box;
+  }
+ 
+  .user-button {
+    align-self: flex-end;
+    padding: $vSpace/2 $hSpace/2;
+  }
+  
+}

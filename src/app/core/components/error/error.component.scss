@@ -1,0 +1,10 @@
+.error-msg {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  word-break: break-all;
+
+  &-button {
+    margin-left: 15px;
+  }
+}

@@ -1,0 +1,40 @@
+@import '../../../common.scss';
+
+gu-users-list {
+  height: 100%;
+  width: 100%;
+}
+
+gu-search-box {
+  width: fit-content;
+}
+
+.search-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+// Styling for wide, narrow sceens (phones in landscape mode)
+@media (max-height: $mediaHeight) { 
+  gu-navbar {
+    height: 100%;
+  }
+
+  gu-users-list {
+    width: fit-content;
+    padding-right: $hSpace;
+  }
+  
+  .search-panel {
+    flex-direction: row;
+    align-items: center;
+    padding-left: $hSpace;
+  }
+
+}

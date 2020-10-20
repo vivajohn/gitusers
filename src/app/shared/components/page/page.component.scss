@@ -1,0 +1,33 @@
+@import '../../../common.scss';
+
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-y: hidden;
+  background: $light-backcolor;
+  color: black;
+  overflow-y: hidden;
+
+  &-content {
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+  }
+}
+
+// Styling for wide, narrow sceens (phones in landscape mode)
+@media (max-height: $mediaHeight) {
+  .page {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}

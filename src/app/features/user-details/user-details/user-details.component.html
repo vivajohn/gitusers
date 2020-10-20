@@ -1,0 +1,22 @@
+<gu-page>
+  <gu-navbar>
+    <div navleft>
+      <button mat-mini-fab [routerLink]="['/search']">
+        <mat-icon aria-label="Go to search page">keyboard_backspace</mat-icon>
+      </button>
+    </div>
+    <div *ngIf="user" navmiddle>
+      {{user.login}}
+    </div>
+  </gu-navbar>
+
+  <div *ngIf="user" class="details">
+    <div class="details-image">
+      <img [src]="user.avatar_url" (load)="imageLoaded()" [alt]="user.login">
+    </div>
+
+    <div *ngIf="isLoaded" class="details-chart">
+      <gu-activity-chart [username]="user.login"></gu-activity-chart>
+    </div>
+  </div>
+</gu-page>

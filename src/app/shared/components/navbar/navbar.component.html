@@ -1,0 +1,16 @@
+<div class="navbar">        
+  <div class="navbar-left">
+    <ng-content select="[navleft]"></ng-content>
+  </div>
+
+  <div class="navbar-middle">
+    <ng-content select="[navmiddle]"></ng-content>
+  </div>
+
+  <div class="navbar-right">
+    <ng-content select="[navright]"></ng-content>
+    <button mat-mini-fab *ngIf="account.useFirebase" (click)="account.logout()">
+      <mat-icon aria-label="Logout">power_settings_new</mat-icon>
+    </button>
+  </div>
+</div>

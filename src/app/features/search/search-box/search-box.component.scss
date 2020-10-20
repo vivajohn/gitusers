@@ -1,0 +1,15 @@
+@import '../../../common.scss';
+
+.search-box {
+  @extend .row;
+  width: fit-content;
+  align-self: center;
+  font-size: 1.5em;
+  margin-top: $vSpace;
+
+  &-icon {
+    @extend .row;
+    height: 100%;
+    margin-left: $hSpace / 2;
+  }
+}

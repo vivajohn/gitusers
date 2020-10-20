@@ -1,0 +1,8 @@
+<div class="search-box">
+  <mat-form-field>
+    <input #searchbox matInput autofocus (input)="output.emit(searchbox.value)" [value]="text" placeholder="Search">
+  </mat-form-field>
+  <div class="search-box-icon">
+    <mat-icon *ngIf="text" class="pointer" aria-label="Delete search text" (click)="output.emit('')">clear</mat-icon>
+  </div>
+</div>

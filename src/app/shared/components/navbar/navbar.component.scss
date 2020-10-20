@@ -1,0 +1,77 @@
+@import '../../../common.scss';
+
+.navbar {
+  @extend .row;
+  justify-content: space-between;
+  padding: 0 $hSpace;
+  height: 64px;
+  width: 100%;
+  background: $dark-backcolor;
+  box-sizing: border-box;
+
+  &-left {
+    @extend .row;
+    justify-content: left;
+    width: 30%;
+    height: 100%;
+  }
+  
+  &-middle {
+    @extend .row;
+    justify-content: center;
+    width: 40%;
+    height: 100%;
+    font-size: 1.8em;
+  }
+  
+  &-right {
+    @extend .row;
+    justify-content: flex-end;
+    width: 30%;
+    height: 100%;
+  }
+}
+
+// Styling for wide, narrow sceens (phones in landscape mode)
+@media (max-height: $mediaHeight) {
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 50px;
+    height: 100%;
+
+    &-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 20%;
+      width: 100%;
+    }
+
+    &-middle {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transform: rotate(-90deg);
+      word-break: keep-all;
+      white-space: nowrap;
+      font-size: 1.3em;
+      height: 60%;
+      width: 100%;
+    }
+
+    &-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 20%;
+      width: 100%;
+    }
+  }
+
+}

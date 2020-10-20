@@ -1,0 +1,23 @@
+<div class="userlist">
+  <div *ngFor="let user of users">
+    <mat-card [routerLink]="['/userdetails', user.login]">
+
+      <!-- landscape or portrait will be display:none depending on the orientation -->
+      <div class="user">
+        <div class="landscape user-img" [style.background-image]="'url(' + user.avatar_url + ')'"></div>
+        <div class="user-info">
+          <div class="portrait user-img" [style.background-image]="'url(' + user.avatar_url + ')'"></div>
+          <div class="text-box">
+            <span class="user-text">{{user.login}}</span>
+          </div>
+        </div>
+        <div class="user-button">
+          <button mat-mini-fab [routerLink]="['/userdetails', user.login]">
+            <mat-icon aria-label="Logout">settings</mat-icon>
+          </button>
+        </div>
+      </div>
+
+    </mat-card>
+  </div>  
+</div>
